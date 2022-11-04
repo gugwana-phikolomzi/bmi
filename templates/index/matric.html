@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>BMI | Matric</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1>BMI Calculator</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card mt-4">
+                    <div class="card-body">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card main-card mt-4">
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <p>
+                                Weight in kgs:
+
+                            </p>
+                            <p>
+                                <input class="inputs" type="number" name="weight" step="any" required
+                                id="id_weight"> 
+                            </p>
+                            <p>
+                                Height in meters:
+                            </p>
+                            <p>
+                                <input class="inputs" type="number" name="height" step="any" required
+                                id="id_height"> 
+                            </p>
+                            <input class="btn btn-success" type="submit" value="Submit">
+
+                        </form>
+
+                    </div>
+                    <div class="result-container mt-4">
+                        <div class="card result-card">
+                            <div class="card-body">
+                                <p>Your BMI is: {{bmi}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card mt-4">
+                    <div class="card-body">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+{% endblock %}
